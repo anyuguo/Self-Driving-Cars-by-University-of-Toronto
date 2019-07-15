@@ -12,21 +12,14 @@ import numpy as np
 from numpy.linalg import inv
 import matplotlib.pyplot as plt
 
-#def wraptopi(x):
-#    if x > np.pi:
-#        x = x - (np.floor(x / (2 * np.pi)) + 1) * 2 * np.pi
-#    elif x < -np.pi:
-#        x = x + (np.floor(x / (-2 * np.pi)) + 1) * 2 * np.pi
-#    return x
+
 
 def wraptopi(x):
     if x > np.pi or x<-np.pi:
-#        x = x - 2 * np.pi * np.floor(x/(2*np.pi) + 0.5)
         x = ((x / np.pi + 1) % 2 - 1) * np.pi
+    
     return x
 
-#def wraptopi(x):
-#    return max(-np.pi, min(x, np.pi))
 
 def measurement_update(lk, rk, bk, P_check, x_check):
     
@@ -125,7 +118,7 @@ for k in range(1, len(t)):
     x_check[2,0] = wraptopi(x_check[2,0])
 
     # 2. Motion model jacobian with respect to last state
-    F_km = np.mat([[1, 0, -delta_t * math.sin(theta) * v[k-1]],
+    F_km = np.mat([[1, 0, -1 * delta_t * math.sin(theta) * v[k-1]],
                    [0, 1, delta_t * math.cos(theta) * v[k-1]],
                    [0, 0, 1]])
 
