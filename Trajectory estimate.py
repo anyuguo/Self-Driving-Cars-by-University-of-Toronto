@@ -82,8 +82,8 @@ d = data['d']  # distance between robot center and laser rangefinder [m]
 
 v_var = 0.01  # translation velocity variance  
 om_var = 0.01  # rotational velocity variance 
-r_var = 0.008  # range measurements variance
-b_var = 10000  # bearing measurement variance
+r_var = 0.01  # range measurements variance
+b_var = 22  # bearing measurement variance
 
 Q_km = np.diag([v_var, om_var]) # input noise covariance 
 cov_y = np.diag([r_var, b_var])  # measurement noise covariance 
