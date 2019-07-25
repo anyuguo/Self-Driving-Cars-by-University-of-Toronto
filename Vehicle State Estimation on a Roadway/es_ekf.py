@@ -1,7 +1,4 @@
-# Starter code for the Coursera SDC Course 2 final project.
-#
-# Author: Trevor Ablett and Jonathan Kelly
-# University of Toronto Institute for Aerospace Studies
+
 import pickle
 import numpy as np
 from numpy.linalg import inv
